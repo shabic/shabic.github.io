@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <title>Shabi Blog</title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_859455_eaq7v6w8ktj.css">
+<meta name="generator" content="Hexo 4.1.0"></head>
+<body>
+<header class="header">
+    <div class="header-inner">
+        <div class="header-title">
+
+        </div>
+        <nav class="header-nav">
+            
+            <a href="/" class="header-nav-link" >
+                首页
+            </a>
+            
+
+            
+            <a href="/archives" class="header-nav-link">
+                归档
+            </a>
+            
+
+            
+            <a href="/tags" class="header-nav-link">
+                标签
+            </a>
+            
+
+            
+        </nav>
+    </div>
+</header>
+<header class="mobile-header">
+    <div class="mobile-nav">
+        <div class="mobile-nav-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="mobile-nav-title">
+            <a href="/" class="mobile-nav-title-link">Shabi's Blog</a>
+        </div>
+
+    </div>
+    <nav class="mobile-menu">
+        <ul class="mobile-menu-list">
+            <li class="mobile-menu-item">
+                <i class="iconfont icon-home"></i>
+                <a href="/" class="mobile-nav-link">首页</a>
+            </li>
+            <li class="mobile-menu-item">
+                <i class="iconfont icon-archive"></i>
+                <a href="/archives" class="mobile-nav-link">归档</a>
+            </li>
+            <li class="mobile-menu-item">
+                <i class="iconfont icon-tag"></i>
+                <a href="/tags" class="mobile-nav-link">标签</a>
+            </li>
+            <li class="mobile-menu-item">
+                <i class="iconfont icon-about"></i>
+                <a href="/about/" class="mobile-nav-link">关于</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<div class="main">
+    <div class="content-inner">
+        <div class="posts">
+    <article class="post-whole">
+        <div class="post-title">
+            <h2 class="title">aosp编译</h2>
+            <div class="post-meta">
+                <span class="post-time">2019-12-06</span>
+                
+                <span class="post-visit"> 阅读次数：<span id="busuanzi_value_page_pv"></span></span>
+            </div>
+        </div>
+        <div class="post-toc" id="post-toc">
+    <strong class="post-toc-title">目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#官方"><span class="toc-text">官方</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#前提"><span class="toc-text">前提</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#编译镜像"><span class="toc-text">编译镜像</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#产物"><span class="toc-text">产物</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#刷入"><span class="toc-text">刷入</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#编译idegen"><span class="toc-text">编译idegen</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#m、mm、mmm"><span class="toc-text">m、mm、mmm</span></a></li></ol>
+    <div class="back-to-top" id="back-to-top">
+        <a href="javascript:void(0);">回到顶部</a>
+    </div>
+</div>
+        <div class="post-content">
+            <p> 本文档是对aosp编译的一系列步骤进行说明，是对官方资料的一些个人整理</p>
+<a id="more"></a>
+
+<h4 id="官方"><a href="#官方" class="headerlink" title="官方"></a>官方</h4><p><a href="https://source.android.com/setup/build/building" target="_blank" rel="noopener">build</a></p>
+<p><a href="https://source.android.com/setup/build/initializing" target="_blank" rel="noopener">initializing</a></p>
+<h4 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h4><ol>
+<li>下载好aosp</li>
+<li>解压相关驱动文件</li>
+</ol>
+<h4 id="编译镜像"><a href="#编译镜像" class="headerlink" title="编译镜像"></a>编译镜像</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> build/envsetup.sh</span><br><span class="line">make clobber</span><br><span class="line">lunch aosp_blueline-userdebug</span><br><span class="line">make -j12</span><br></pre></td></tr></table></figure>
+
+<h4 id="产物"><a href="#产物" class="headerlink" title="产物"></a>产物</h4><p>todo</p>
+<h4 id="刷入"><a href="#刷入" class="headerlink" title="刷入"></a>刷入</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">adb reboot-bootloader //重启至bootloader模式</span><br><span class="line">fastboot -w flashall //刷入全部镜像</span><br></pre></td></tr></table></figure>
+
+<h4 id="编译idegen"><a href="#编译idegen" class="headerlink" title="编译idegen"></a>编译idegen</h4><p>生成android.iml和android.ipr</p>
+<p>用于android studio导入源码</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mmm development/tools/idegen/</span><br><span class="line">development/tools/idegen/idegen.sh</span><br></pre></td></tr></table></figure>
+
+<h4 id="m、mm、mmm"><a href="#m、mm、mmm" class="headerlink" title="m、mm、mmm"></a>m、mm、mmm</h4><p>android源码目录下的build/envsetup.sh文件，描述编译的命令</p>
+<ul>
+<li>m：编译所有的模块</li>
+<li>mm：编译当前目录下的模块，当前目录下要有Android.mk文件</li>
+<li>mmm：编译指定路径下的模块，指定路径下要有Android.mk文件</li>
+</ul>
+
+        </div>
+        
+    </article>
+</div>
+<div class="paginator">
+    
+        
+            <a class="prev" href="/2019/12/09/%E6%A0%91%E8%8E%93%E6%B4%BE%E7%9A%84%E4%B8%80%E4%BA%9B%E8%B5%84%E6%96%99/">
+                <i class="iconfont icon-prev"></i>
+                <span class="nav-default">树莓派的一些资料</span>
+                <span class="nav-mobile">上一篇</span>
+            </a>
+        
+        
+            <a class="next" href="/2019/11/24/%E4%B8%80%E4%BA%9B%E8%B5%84%E6%96%99/">
+                <span class="nav-default">一些资料</span>
+                <span class="nav-mobile">下一篇</span>
+                <i class="iconfont icon-next"></i>
+            </a>
+        
+    
+</div>
+<div id="comment-container"></div>
+    </div>
+</div>
+<footer class="footer-social">
+    
+
+    
+
+    
+
+    <div class="footer-copyright">
+        <p class="time-line">
+            &copy;
+            
+            
+            2019
+            &nbsp;<i class="iconfont icon-heart"></i>&nbsp;
+            <a target="_blank" href="https://github.com/iJinxin">Shabi</a>
+        </p>
+        <p class="theme-info">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme -
+            <a target="_blank" href="https://github.com/iJinxin/hexo-theme-sky">Sky</a>
+        </p>
+    </div>
+</footer>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+    
+
+</script>
+</html>

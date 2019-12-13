@@ -1,0 +1,51 @@
+@startuml
+
+hide footbox
+
+-> ActivityManagerService: attachApplication(\nIApplicationThread thread...)
+activate ActivityManagerService
+ActivityManagerService -> ActivityManagerService++: attachApplicationLocked(thread...)
+
+ActivityManagerService -> ActivityThread.ApplicationThread++: thread.bindApplication(...)
+Note right of ActivityThread.ApplicationThread: ApplicationThread extends IApplicationThread.Stub
+ActivityThread.ApplicationThread -> ActivityThread++: sendMessage(H.BIND_APPLICATION, data)
+ActivityThread -> ActivityThread.H++: mH.sendMessage(msg)
+return
+
+return
+return
+return
+[<-- ActivityManagerService:
+deactivate ActivityManagerService
+
+Note right of ActivityThread.H:Handler接收到消息\n回调消息处理函数
+ActivityThread.H -> ActivityThread.H++: handleMessage
+
+ActivityThread.H -> ActivityThread++: handleBindApplication
+
+ActivityThread -> LoadedApk++: AppBindData.info.makeApplication.makeApplication(...)
+
+LoadedApk -> Instrumentation++: newApplication
+
+Instrumentation -> Application++: attach
+
+Application -> Application++: attachBaseContex`t
+Note right of Application:Application extends ContextWrapper\nattachBaseContext在ContextWrapper下
+
+return
+return
+
+return
+
+return
+
+ActivityThread-> Instrumentation++: callApplicationOnCreate
+
+Instrumentation-> Application ++ : onCreate
+return
+return
+
+ActivityThread--> ActivityThread.H
+deactivate ActivityThread.H
+
+@enduml

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <title>Shabi Blog</title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_859455_eaq7v6w8ktj.css">
+<meta name="generator" content="Hexo 4.1.0"></head>
+<body>
+<header class="header">
+    <div class="header-inner">
+        <div class="header-title">
+
+        </div>
+        <nav class="header-nav">
+            
+            <a href="/" class="header-nav-link" >
+                首页
+            </a>
+            
+
+            
+            <a href="/archives" class="header-nav-link">
+                归档
+            </a>
+            
+
+            
+            <a href="/tags" class="header-nav-link">
+                标签
+            </a>
+            
+
+            
+        </nav>
+    </div>
+</header>
+<header class="mobile-header">
+    <div class="mobile-nav">
+        <div class="mobile-nav-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="mobile-nav-title">
+            <a href="/" class="mobile-nav-title-link">Shabi's Blog</a>
+        </div>
+
+    </div>
+    <nav class="mobile-menu">
+        <ul class="mobile-menu-list">
+            <li class="mobile-menu-item">
+                <i class="iconfont icon-home"></i>
+                <a href="/" class="mobile-nav-link">首页</a>
+            </li>
+            <li class="mobile-menu-item">
+                <i class="iconfont icon-archive"></i>
+                <a href="/archives" class="mobile-nav-link">归档</a>
+            </li>
+            <li class="mobile-menu-item">
+                <i class="iconfont icon-tag"></i>
+                <a href="/tags" class="mobile-nav-link">标签</a>
+            </li>
+            <li class="mobile-menu-item">
+                <i class="iconfont icon-about"></i>
+                <a href="/about/" class="mobile-nav-link">关于</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<div class="main">
+    <div class="content-inner">
+        <div class="posts">
+    <article class="post-whole">
+        <div class="post-title">
+            <h2 class="title">twrp install</h2>
+            <div class="post-meta">
+                <span class="post-time">2019-12-11</span>
+                
+                <span class="post-visit"> 阅读次数：<span id="busuanzi_value_page_pv"></span></span>
+            </div>
+        </div>
+        <div class="post-toc" id="post-toc">
+    <strong class="post-toc-title">目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#关于"><span class="toc-text">关于</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#下载"><span class="toc-text">下载</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#启动bootloadder"><span class="toc-text">启动bootloadder</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#刷入twrp临时引导"><span class="toc-text">刷入twrp临时引导</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#刷入永久twrp"><span class="toc-text">刷入永久twrp</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#两种方式"><span class="toc-text">两种方式</span></a></li></ol></li></ol>
+    <div class="back-to-top" id="back-to-top">
+        <a href="javascript:void(0);">回到顶部</a>
+    </div>
+</div>
+        <div class="post-content">
+            <p>TWRP是一个开源社区项目。TWRP开发目前大约由4个人完成。我们还有一个庞大的支持社区，其中有许多人愿意通过我们的<a href="http://webchat.freenode.net/?channels=twrp" target="_blank" rel="noopener">IRC频道</a>或在<a href="http://forum.xda-developers.com/" target="_blank" rel="noopener">xda-developers之</a>类的论坛上回答问题并帮助人们使用其设备。</p>
+<a id="more"></a>
+
+<h4 id="关于"><a href="#关于" class="headerlink" title="关于"></a>关于</h4><p>Team Win最初成立的目的是为HTC EVO 4G将WiMAX移植到CM7。在完成EVO 4G的工作之后，我们想从事一个项目，该项目不仅可以在EVO 4G上使用，而且可以在更多设备上使用，我们决定进行恢复工作。今天，TWRP是领先的Android手机第三方recovery。</p>
+<p>recovery用于在设备上安装自定义软件。此自定义软件可以包括较小的修改，例如使您的设备生根，甚至用完全自定义的“ ROM”（例如<a href="http://omnirom.org/" target="_blank" rel="noopener">OmniROM）</a>替换设备的固件</p>
+<p>您可以在<a href="https://github.com/omnirom/android_bootable_recovery/" target="_blank" rel="noopener">github.com/omnirom/android_bootable_recovery/中</a>找到TWRP的源代码。</p>
+<h4 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h4><p>刷入twrp之前需要下载twrp(<a href="https://twrp.me/" target="_blank" rel="noopener">https://twrp.me/</a>)</p>
+<h4 id="启动bootloadder"><a href="#启动bootloadder" class="headerlink" title="启动bootloadder"></a>启动bootloadder</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb reboot bootloader</span><br></pre></td></tr></table></figure>
+
+<h4 id="刷入twrp临时引导"><a href="#刷入twrp临时引导" class="headerlink" title="刷入twrp临时引导"></a>刷入twrp临时引导</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fastboot boot twrp.img</span><br></pre></td></tr></table></figure>
+
+<h4 id="刷入永久twrp"><a href="#刷入永久twrp" class="headerlink" title="刷入永久twrp"></a>刷入永久twrp</h4><p>也就是.zip的twrp文件，此方式适合所有需要刷入的zip，比如magiska</p>
+<h5 id="两种方式"><a href="#两种方式" class="headerlink" title="两种方式"></a>两种方式</h5><ol>
+<li>把twrp.zip保存到手机，再通过界面操作进行刷入</li>
+<li>通过sideload</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb sideload twrp.zip</span><br></pre></td></tr></table></figure>
+        </div>
+        
+    </article>
+</div>
+<div class="paginator">
+    
+        
+            <a class="prev" href="/2019/12/11/application-init/">
+                <i class="iconfont icon-prev"></i>
+                <span class="nav-default">Application初始化过程，基于android10</span>
+                <span class="nav-mobile">上一篇</span>
+            </a>
+        
+        
+            <a class="next" href="/2019/12/09/%E6%A0%91%E8%8E%93%E6%B4%BE%E7%9A%84%E4%B8%80%E4%BA%9B%E8%B5%84%E6%96%99/">
+                <span class="nav-default">树莓派的一些资料</span>
+                <span class="nav-mobile">下一篇</span>
+                <i class="iconfont icon-next"></i>
+            </a>
+        
+    
+</div>
+<div id="comment-container"></div>
+    </div>
+</div>
+<footer class="footer-social">
+    
+
+    
+
+    
+
+    <div class="footer-copyright">
+        <p class="time-line">
+            &copy;
+            
+            
+            2019
+            &nbsp;<i class="iconfont icon-heart"></i>&nbsp;
+            <a target="_blank" href="https://github.com/iJinxin">Shabi</a>
+        </p>
+        <p class="theme-info">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme -
+            <a target="_blank" href="https://github.com/iJinxin/hexo-theme-sky">Sky</a>
+        </p>
+    </div>
+</footer>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+    
+
+</script>
+</html>

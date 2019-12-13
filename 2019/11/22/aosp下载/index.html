@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <title>Shabi Blog</title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_859455_eaq7v6w8ktj.css">
+<meta name="generator" content="Hexo 4.1.0"></head>
+<body>
+<header class="header">
+    <div class="header-inner">
+        <div class="header-title">
+
+        </div>
+        <nav class="header-nav">
+            
+            <a href="/" class="header-nav-link" >
+                首页
+            </a>
+            
+
+            
+            <a href="/archives" class="header-nav-link">
+                归档
+            </a>
+            
+
+            
+            <a href="/tags" class="header-nav-link">
+                标签
+            </a>
+            
+
+            
+        </nav>
+    </div>
+</header>
+<header class="mobile-header">
+    <div class="mobile-nav">
+        <div class="mobile-nav-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="mobile-nav-title">
+            <a href="/" class="mobile-nav-title-link">Shabi's Blog</a>
+        </div>
+
+    </div>
+    <nav class="mobile-menu">
+        <ul class="mobile-menu-list">
+            <li class="mobile-menu-item">
+                <i class="iconfont icon-home"></i>
+                <a href="/" class="mobile-nav-link">首页</a>
+            </li>
+            <li class="mobile-menu-item">
+                <i class="iconfont icon-archive"></i>
+                <a href="/archives" class="mobile-nav-link">归档</a>
+            </li>
+            <li class="mobile-menu-item">
+                <i class="iconfont icon-tag"></i>
+                <a href="/tags" class="mobile-nav-link">标签</a>
+            </li>
+            <li class="mobile-menu-item">
+                <i class="iconfont icon-about"></i>
+                <a href="/about/" class="mobile-nav-link">关于</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<div class="main">
+    <div class="content-inner">
+        <div class="posts">
+    <article class="post-whole">
+        <div class="post-title">
+            <h2 class="title">aosp下载</h2>
+            <div class="post-meta">
+                <span class="post-time">2019-11-22</span>
+                
+                <span class="post-visit"> 阅读次数：<span id="busuanzi_value_page_pv"></span></span>
+            </div>
+        </div>
+        <div class="post-toc" id="post-toc">
+    <strong class="post-toc-title">目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#简介"><span class="toc-text">简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参考"><span class="toc-text">参考</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#下载repo"><span class="toc-text">下载repo</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#源"><span class="toc-text">源</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#下载aosp"><span class="toc-text">下载aosp</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#创建工作目录"><span class="toc-text">创建工作目录</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#初始化仓库，source替换为对应的源地址"><span class="toc-text">初始化仓库，source替换为对应的源地址</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#如需指定版本，version，example：android-9-0-0-r33"><span class="toc-text">如需指定版本，version，example：android-9.0.0_r33</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#同步源码树（以后只需执行这条命令来同步）"><span class="toc-text">同步源码树（以后只需执行这条命令来同步）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#example"><span class="toc-text">example</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用清华每月更新的初始化包"><span class="toc-text">使用清华每月更新的初始化包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#切换源"><span class="toc-text">切换源</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分支"><span class="toc-text">分支</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#查看可切换的分支"><span class="toc-text">查看可切换的分支</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#切换分支"><span class="toc-text">切换分支</span></a></li></ol></li></ol>
+    <div class="back-to-top" id="back-to-top">
+        <a href="javascript:void(0);">回到顶部</a>
+    </div>
+</div>
+        <div class="post-content">
+            <p>对aosp下载整个流程记录，参考了清华以及google官方文档</p>
+<a id="more"></a>
+
+<h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>aosp简称：android open source project，也就是android的开放源代码项目，因为android是开源的，aosp大概就是android源代码托管项目</p>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p>google：<a href="https://source.android.com/setup/build/downloading" target="_blank" rel="noopener">https://source.android.com/setup/build/downloading</a></p>
+<p>Tuna：<a href="https://mirrors.tuna.tsinghua.edu.cn/help/AOSP/" target="_blank" rel="noopener">https://mirrors.tuna.tsinghua.edu.cn/help/AOSP/</a></p>
+<h3 id="下载repo"><a href="#下载repo" class="headerlink" title="下载repo"></a>下载repo</h3><p>google</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mkdir ~/bin</span><br><span class="line">PATH=~/bin:<span class="variable">$PATH</span></span><br><span class="line">curl https://storage.googleapis.com/git-repo-downloads/repo &gt; ~/bin/repo</span><br><span class="line">chmod a+x ~/bin/repo</span><br></pre></td></tr></table></figure>
+
+<p>tuan：<a href="https://mirrors.tuna.tsinghua.edu.cn/help/git-repo/" target="_blank" rel="noopener">https://mirrors.tuna.tsinghua.edu.cn/help/git-repo/</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">curl https://mirrors.tuna.tsinghua.edu.cn/git/git-repo -o repo</span><br><span class="line">chmod +x repo</span><br><span class="line"><span class="built_in">export</span> REPO_URL=<span class="string">'https://mirrors.tuna.tsinghua.edu.cn/git/git-repo/'</span></span><br><span class="line">为了方便可以将其拷贝到你的PATH里。</span><br></pre></td></tr></table></figure>
+
+<h3 id="源"><a href="#源" class="headerlink" title="源"></a>源</h3><ol>
+<li><p>官方：<a href="https://android.googlesource.com/platform/manifest" target="_blank" rel="noopener">https://android.googlesource.com/platform/manifest</a></p>
+</li>
+<li><p>tuna：<a href="https://aosp.tuna.tsinghua.edu.cn/platform/manifest" target="_blank" rel="noopener">https://aosp.tuna.tsinghua.edu.cn/platform/manifest</a></p>
+</li>
+</ol>
+<h3 id="下载aosp"><a href="#下载aosp" class="headerlink" title="下载aosp"></a>下载aosp</h3><h5 id="创建工作目录"><a href="#创建工作目录" class="headerlink" title="创建工作目录"></a>创建工作目录</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir WORKING_DIRECTORY</span><br><span class="line"><span class="built_in">cd</span> WORKING_DIRECTORY</span><br></pre></td></tr></table></figure>
+
+<h5 id="初始化仓库，source替换为对应的源地址"><a href="#初始化仓库，source替换为对应的源地址" class="headerlink" title="初始化仓库，source替换为对应的源地址"></a>初始化仓库，source替换为对应的源地址</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">repo init -u <span class="built_in">source</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="如需指定版本，version，example：android-9-0-0-r33"><a href="#如需指定版本，version，example：android-9-0-0-r33" class="headerlink" title="如需指定版本，version，example：android-9.0.0_r33"></a>如需指定版本，<a href="https://source.android.com/setup/start/build-numbers#source-code-tags-and-builds" target="_blank" rel="noopener">version</a>，example：android-9.0.0_r33</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">repo init -u <span class="built_in">source</span> -b version</span><br></pre></td></tr></table></figure>
+
+<h5 id="同步源码树（以后只需执行这条命令来同步）"><a href="#同步源码树（以后只需执行这条命令来同步）" class="headerlink" title="同步源码树（以后只需执行这条命令来同步）"></a>同步源码树（以后只需执行这条命令来同步）</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">repo sync</span><br></pre></td></tr></table></figure>
+
+<h5 id="example"><a href="#example" class="headerlink" title="example"></a>example</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mkdir android-10.0.0_r5</span><br><span class="line"><span class="built_in">cd</span> android-10.0.0_r5</span><br><span class="line">repo init -u https://aosp.tuna.tsinghua.edu.cn/platform/manifest -b android-9.0.0_r33</span><br><span class="line">repo sync</span><br></pre></td></tr></table></figure>
+
+<h3 id="使用清华每月更新的初始化包"><a href="#使用清华每月更新的初始化包" class="headerlink" title="使用清华每月更新的初始化包"></a>使用清华每月更新的初始化包</h3><p>由于首次同步下载的数据量很大， 清华源提供了打包好的每月更新包</p>
+<p>下载 <a href="https://mirrors.tuna.tsinghua.edu.cn/aosp-monthly/aosp-latest.tar，下载完成后记得根据" target="_blank" rel="noopener">https://mirrors.tuna.tsinghua.edu.cn/aosp-monthly/aosp-latest.tar，下载完成后记得根据</a> checksum.txt 的内容校验一下。</p>
+<p>由于所有代码都是从隐藏的 <code>.repo</code> 目录中 checkout 出来的，所以我们只保留了 <code>.repo</code> 目录，下载后解压 再 <code>repo sync</code> 一遍即可得到完整的目录。</p>
+<p>使用方法如下:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">wget -c https://mirrors.tuna.tsinghua.edu.cn/aosp-monthly/aosp-latest.tar</span><br><span class="line">tar xf aosp-latest.tar</span><br><span class="line"><span class="built_in">cd</span> AOSP</span><br><span class="line">repo sync</span><br></pre></td></tr></table></figure>
+
+<p>sync后还可以选择<a href="#user-content-切换分支">切换分支</a></p>
+<h3 id="切换源"><a href="#切换源" class="headerlink" title="切换源"></a>切换源</h3><p>如果你之前已经通过某种途径获得了 AOSP 的源码(或者你只是 init 这一步完成后)， 你希望以后通过 TUNA 同步 AOSP 部分的代码，只需要将 <code>.repo/manifest.xml</code> 把其中的 aosp 这个 remote 的 fetch 从 <code>https://android.googlesource.com</code> 改为 <code>https://aosp.tuna.tsinghua.edu.cn/</code>。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;manifest&gt;</span><br><span class="line"></span><br><span class="line">   &lt;remote  name="aosp"</span><br><span class="line">-           fetch="https://android.googlesource.com"</span><br><span class="line">+           fetch="https://aosp.tuna.tsinghua.edu.cn"</span><br><span class="line">            review="android-review.googlesource.com" /&gt;</span><br><span class="line"></span><br><span class="line">   &lt;remote  name="github"</span><br></pre></td></tr></table></figure>
+
+<p>同时，修改 <code>.repo/manifests.git/config</code>，将</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">url &#x3D; https:&#x2F;&#x2F;android.googlesource.com&#x2F;platform&#x2F;manifest</span><br></pre></td></tr></table></figure>
+
+<p>更改为</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">url &#x3D; https:&#x2F;&#x2F;aosp.tuna.tsinghua.edu.cn&#x2F;platform&#x2F;manifest</span><br></pre></td></tr></table></figure>
+
+<h3 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h3><h4 id="查看可切换的分支"><a href="#查看可切换的分支" class="headerlink" title="查看可切换的分支"></a>查看可切换的分支</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> .repo/manifests</span><br><span class="line">git branch -a | cut -d / -f 3</span><br></pre></td></tr></table></figure>
+
+<h4 id="切换分支"><a href="#切换分支" class="headerlink" title="切换分支"></a>切换分支</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">repo init -b android-10.0.0_r5</span><br><span class="line">repo sync</span><br></pre></td></tr></table></figure>
+        </div>
+        
+    </article>
+</div>
+<div class="paginator">
+    
+        
+            <a class="prev" href="/2019/11/24/%E4%B8%80%E4%BA%9B%E8%B5%84%E6%96%99/">
+                <i class="iconfont icon-prev"></i>
+                <span class="nav-default">一些资料</span>
+                <span class="nav-mobile">上一篇</span>
+            </a>
+        
+        
+    
+</div>
+<div id="comment-container"></div>
+    </div>
+</div>
+<footer class="footer-social">
+    
+
+    
+
+    
+
+    <div class="footer-copyright">
+        <p class="time-line">
+            &copy;
+            
+            
+            2019
+            &nbsp;<i class="iconfont icon-heart"></i>&nbsp;
+            <a target="_blank" href="https://github.com/iJinxin">Shabi</a>
+        </p>
+        <p class="theme-info">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme -
+            <a target="_blank" href="https://github.com/iJinxin/hexo-theme-sky">Sky</a>
+        </p>
+    </div>
+</footer>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+    
+
+</script>
+</html>
